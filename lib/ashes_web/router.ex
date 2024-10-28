@@ -21,12 +21,9 @@ defmodule AshesWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-  end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", AshesWeb do
-  #   pipe_through :api
-  # end
+    live "/count", CountLive
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:ashes, :dev_routes) do
